@@ -1,0 +1,9 @@
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\bin\Debug\netcoreapp3.1\Vaccin.deps.json
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\bin\Debug\netcoreapp3.1\Vaccin.dll
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\bin\Debug\netcoreapp3.1\Vaccin.pdb
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\obj\Debug\netcoreapp3.1\Vaccin.csprojAssemblyReference.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\obj\Debug\netcoreapp3.1\Vaccin.AssemblyInfoInputs.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\obj\Debug\netcoreapp3.1\Vaccin.AssemblyInfo.cs
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\obj\Debug\netcoreapp3.1\Vaccin.csproj.CoreCompileInputs.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\obj\Debug\netcoreapp3.1\Vaccin.dll
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Vaccin\obj\Debug\netcoreapp3.1\Vaccin.pdb

@@ -1,0 +1,9 @@
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\bin\Debug\netcoreapp3.1\KleineOefeningen.deps.json
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\bin\Debug\netcoreapp3.1\KleineOefeningen.dll
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\bin\Debug\netcoreapp3.1\KleineOefeningen.pdb
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\obj\Debug\netcoreapp3.1\KleineOefeningen.csprojAssemblyReference.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\obj\Debug\netcoreapp3.1\KleineOefeningen.AssemblyInfoInputs.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\obj\Debug\netcoreapp3.1\KleineOefeningen.AssemblyInfo.cs
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\obj\Debug\netcoreapp3.1\KleineOefeningen.csproj.CoreCompileInputs.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\obj\Debug\netcoreapp3.1\KleineOefeningen.dll
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\KleineOefeningen\obj\Debug\netcoreapp3.1\KleineOefeningen.pdb

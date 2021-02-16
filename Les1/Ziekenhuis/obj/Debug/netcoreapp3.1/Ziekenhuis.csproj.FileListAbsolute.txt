@@ -1,0 +1,9 @@
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\bin\Debug\netcoreapp3.1\Ziekenhuis.deps.json
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\bin\Debug\netcoreapp3.1\Ziekenhuis.dll
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\bin\Debug\netcoreapp3.1\Ziekenhuis.pdb
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\obj\Debug\netcoreapp3.1\Ziekenhuis.csprojAssemblyReference.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\obj\Debug\netcoreapp3.1\Ziekenhuis.AssemblyInfoInputs.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\obj\Debug\netcoreapp3.1\Ziekenhuis.AssemblyInfo.cs
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\obj\Debug\netcoreapp3.1\Ziekenhuis.csproj.CoreCompileInputs.cache
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\obj\Debug\netcoreapp3.1\Ziekenhuis.dll
+C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\Ziekenhuis\obj\Debug\netcoreapp3.1\Ziekenhuis.pdb

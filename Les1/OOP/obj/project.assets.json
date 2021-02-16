@@ -1,0 +1,152 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "BierWinkel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/BierWinkel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BierWinkel.dll": {}
+        }
+      },
+      "KleineOefeningen/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/KleineOefeningen.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KleineOefeningen.dll": {}
+        }
+      },
+      "Vaccin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Vaccin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vaccin.dll": {}
+        }
+      },
+      "Ziekenhuis/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Ziekenhuis.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ziekenhuis.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BierWinkel/1.0.0": {
+      "type": "project",
+      "path": "../BierWinkel/BierWinkel.csproj",
+      "msbuildProject": "../BierWinkel/BierWinkel.csproj"
+    },
+    "KleineOefeningen/1.0.0": {
+      "type": "project",
+      "path": "../KleineOefeningen/KleineOefeningen.csproj",
+      "msbuildProject": "../KleineOefeningen/KleineOefeningen.csproj"
+    },
+    "Vaccin/1.0.0": {
+      "type": "project",
+      "path": "../Vaccin/Vaccin.csproj",
+      "msbuildProject": "../Vaccin/Vaccin.csproj"
+    },
+    "Ziekenhuis/1.0.0": {
+      "type": "project",
+      "path": "../Ziekenhuis/Ziekenhuis.csproj",
+      "msbuildProject": "../Ziekenhuis/Ziekenhuis.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "BierWinkel >= 1.0.0",
+      "KleineOefeningen >= 1.0.0",
+      "Vaccin >= 1.0.0",
+      "Ziekenhuis >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\u2389\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\OOP\\OOP.csproj",
+      "projectName": "OOP",
+      "projectPath": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\OOP\\OOP.csproj",
+      "packagesPath": "C:\\Users\\u2389\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\OOP\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\u2389\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\BierWinkel\\BierWinkel.csproj": {
+              "projectPath": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\BierWinkel\\BierWinkel.csproj"
+            },
+            "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\KleineOefeningen\\KleineOefeningen.csproj": {
+              "projectPath": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\KleineOefeningen\\KleineOefeningen.csproj"
+            },
+            "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\Vaccin\\Vaccin.csproj": {
+              "projectPath": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\Vaccin\\Vaccin.csproj"
+            },
+            "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\Ziekenhuis\\Ziekenhuis.csproj": {
+              "projectPath": "C:\\Users\\u2389\\source\\repos\\ProgrammerenGevorderd2021Oefeningen\\Les1\\Ziekenhuis\\Ziekenhuis.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
