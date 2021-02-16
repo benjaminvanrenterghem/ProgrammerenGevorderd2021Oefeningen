@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BierWinkel", "BierWinkel\Bi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ziekenhuis", "Ziekenhuis\Ziekenhuis.csproj", "{A95F1F4E-69DD-49AD-A9E9-751831C011F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BalSpel1", "..\BalSpel1\BalSpel1.csproj", "{6A96A335-4AD3-4288-9FC2-83606D1E14C4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vaccin", "Vaccin\Vaccin.csproj", "{35ACE7A4-8395-4861-A5F5-CE784DB04589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vaccin", "Vaccin\Vaccin.csproj", "{35ACE7A4-8395-4861-A5F5-CE784DB04589}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{A95F1F4E-69DD-49AD-A9E9-751831C011F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A95F1F4E-69DD-49AD-A9E9-751831C011F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A95F1F4E-69DD-49AD-A9E9-751831C011F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A96A335-4AD3-4288-9FC2-83606D1E14C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A96A335-4AD3-4288-9FC2-83606D1E14C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A96A335-4AD3-4288-9FC2-83606D1E14C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A96A335-4AD3-4288-9FC2-83606D1E14C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35ACE7A4-8395-4861-A5F5-CE784DB04589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35ACE7A4-8395-4861-A5F5-CE784DB04589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35ACE7A4-8395-4861-A5F5-CE784DB04589}.Release|Any CPU.ActiveCfg = Release|Any CPU
