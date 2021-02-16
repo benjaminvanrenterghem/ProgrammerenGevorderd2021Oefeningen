@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30626.31
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BierWinkel", "BierWinkel\BierWinkel.csproj", "{0D1B8E6F-CA16-428B-98A3-DC39C09D2612}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BierWinkelTest", "BierWinkelTest\BierWinkelTest.csproj", "{07BC7081-38CA-4433-B2D2-971AA498FA44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D1B8E6F-CA16-428B-98A3-DC39C09D2612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1B8E6F-CA16-428B-98A3-DC39C09D2612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1B8E6F-CA16-428B-98A3-DC39C09D2612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1B8E6F-CA16-428B-98A3-DC39C09D2612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07BC7081-38CA-4433-B2D2-971AA498FA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BC7081-38CA-4433-B2D2-971AA498FA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BC7081-38CA-4433-B2D2-971AA498FA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BC7081-38CA-4433-B2D2-971AA498FA44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C490EFCC-D340-4A92-B621-4D355032CD16}
+	EndGlobalSection
+EndGlobal
