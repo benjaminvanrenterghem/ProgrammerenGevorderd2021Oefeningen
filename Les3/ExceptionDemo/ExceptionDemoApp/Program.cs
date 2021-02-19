@@ -1,5 +1,6 @@
 ﻿using ExceptionDemo;
 using System;
+using System.Collections.Generic;
 
 namespace ExceptionDemoApp
 {
@@ -18,18 +19,21 @@ namespace ExceptionDemoApp
             //}
             //else
             {
+                //MyDabaseConnection connection = new MyDatabaseConnection(); // tcp connectie naar server met lokale resources, vb. geheugen
                 try
                 {
                     quotient = deeltal / deler;
                     Console.WriteLine($"Resultaat: {quotient}");
                 }
-                catch(Exception e)
+                catch /*(Exception e)*/
                 {
                     Console.WriteLine("Wie deelt door 0 is een snul!");
+                    throw;
                 }
                 finally
                 {
-                    Console.WriteLine("Hier komen we altijd terecht - zonder en met exception");
+                    Console.WriteLine("Hier komen we ALTIJD terecht - zonder en met het optreden van een exception!!");
+                    //connection.Close();
                 }
             }
 
@@ -53,6 +57,21 @@ namespace ExceptionDemoApp
                 myObject = new Exception1();
                 myObject.ExecuteRead();
                 myObject.CallMe();
+            }
+
+            {
+                var superman1 = new SuperMan();
+                var spiderman1 = new SpiderMan();
+                List<Man> mannen = new List<Man> { superman1, spiderman1 };
+                foreach(var m in mannen)
+                {
+                    System.Diagnostics.Debug.WriteLine(m.Power);
+                }
+                List<ISuperHeld> superhelden = new List<ISuperHeld> { superman1, spiderman1 };
+                foreach(var s in superhelden)
+                {
+                    s.SchietLasers();
+                }
             }
         }
     }
