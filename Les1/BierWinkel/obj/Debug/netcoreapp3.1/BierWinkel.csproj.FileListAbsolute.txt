@@ -1,9 +1,0 @@
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\bin\Debug\netcoreapp3.1\BierWinkel.deps.json
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\bin\Debug\netcoreapp3.1\BierWinkel.dll
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\bin\Debug\netcoreapp3.1\BierWinkel.pdb
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\obj\Debug\netcoreapp3.1\BierWinkel.csprojAssemblyReference.cache
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\obj\Debug\netcoreapp3.1\BierWinkel.AssemblyInfoInputs.cache
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\obj\Debug\netcoreapp3.1\BierWinkel.AssemblyInfo.cs
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\obj\Debug\netcoreapp3.1\BierWinkel.csproj.CoreCompileInputs.cache
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\obj\Debug\netcoreapp3.1\BierWinkel.dll
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les1\BierWinkel\obj\Debug\netcoreapp3.1\BierWinkel.pdb

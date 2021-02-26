@@ -1,9 +1,0 @@
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\bin\Debug\netcoreapp3.1\ExceptionDemo.deps.json
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\bin\Debug\netcoreapp3.1\ExceptionDemo.dll
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\bin\Debug\netcoreapp3.1\ExceptionDemo.pdb
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\obj\Debug\netcoreapp3.1\ExceptionDemo.csprojAssemblyReference.cache
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\obj\Debug\netcoreapp3.1\ExceptionDemo.AssemblyInfoInputs.cache
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\obj\Debug\netcoreapp3.1\ExceptionDemo.AssemblyInfo.cs
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\obj\Debug\netcoreapp3.1\ExceptionDemo.csproj.CoreCompileInputs.cache
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\obj\Debug\netcoreapp3.1\ExceptionDemo.dll
-C:\Users\u2389\source\repos\ProgrammerenGevorderd2021Oefeningen\Les3\ExceptionDemo\ExceptionDemo\obj\Debug\netcoreapp3.1\ExceptionDemo.pdb
