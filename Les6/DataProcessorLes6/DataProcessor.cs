@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 //using System.Linq;
+using System;
 
 namespace ProcessorExample
 {
@@ -10,9 +11,10 @@ namespace ProcessorExample
         #endregion
 
         #region Properties
-        private ProcessMethod _process;
+        private /*ProcessMethod*/Func<List<int>, double> _process;
         private List<int> _values = new List<int>();
         private double _result;
+        private Action<List<int>> _printOut;
         #endregion
 
         #region Ctor
@@ -22,14 +24,19 @@ namespace ProcessorExample
                 _values.Add(i);
         }
 
-        public void AddMethod(ProcessMethod method)
+        public void SetPrint(Action<List<int>> print)
         {
-            _process += method;
+            _printOut = print;
+        }
+
+        public void PrintValues()
+        {
+            _printOut(_values);
         }
         #endregion
 
         #region Methods
-        public void SetMethod(ProcessMethod method)
+        public void SetMethod(/*ProcessMethod*/Func<List<int>, double> method)
         {
             _process = method;
         }

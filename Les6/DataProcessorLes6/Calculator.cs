@@ -31,6 +31,11 @@ namespace ProcessorExample
             //return values.Min();
         }
 
+        public double Range(List<int> values)
+        {
+            return Max(values) - Min(values);
+        }
+
         public double Max(List<int> values)
         {
             var max = double.MaxValue * -1;
