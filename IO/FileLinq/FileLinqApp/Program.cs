@@ -35,7 +35,8 @@ namespace FileLinqApp
                 "Joe Doe"
             };
 
-            // Get the names which are 8 characters or less, using LINQ  
+            // Get the names which are 8 characters or less, using LINQ
+            // Query Syntax: superdicht tegen SQL, MAAR ... wordt tegenwoordig minder gebruikt
             var shortNames = from name in names where name.Length <= 8 orderby name.Length select name;
 
             foreach (var name in shortNames)
@@ -52,11 +53,13 @@ namespace FileLinqApp
                 "Joe Doe"
             };
 
+            // METHOD SYNTAX: meest gebruikt!
             // Get the names which are 8 characters or less, using LINQ
-            var shortNames = names.Where(name => name.Length <= 8);
+            //var shortNames = names.Where(name => name.Length <= 8);
             // Order it by length
-            shortNames = shortNames.OrderBy(name => name.Length);
+            //shortNames = shortNames.OrderBy(name => name.Length);
             // Add a name to the original list
+            var shortNames = names.Where(n => n.Length <= 8).OrderBy(n => n.Length);
             names.Add("Zoe Doe");
 
             // Iterate over it - the query has not actually been executed yet!
@@ -82,7 +85,7 @@ namespace FileLinqApp
             {
                 1, 2, 4, 8, 16, 32
             };
-            var smallNumbers = numbers.Where(n => n > 1 && n != 4 && n < 10);
+            var smallNumbers = numbers.Where(n => n > 1 && n != 4 && n < 10); // SQL: AND -> && SQL: OR -> || SQL: NOT -> !; ook haakjes zijn mogelijk, zie SQL
             foreach (var n in smallNumbers)
                 Console.WriteLine(n);
         }
@@ -100,7 +103,12 @@ namespace FileLinqApp
             var validNumbers = numbers.Where(n => !excludedNumbers.Contains(n));
             foreach (var n in validNumbers)
                 Console.WriteLine(n);
+
+            var sameResult = numbers.Except(excludedNumbers);
+            foreach (var n in sameResult)
+                Console.WriteLine(n);
         }
+        // Union() : unie, Intersect(): doorsnede, Except() : alles buiten de doorsnede
 
         public static void Test6()
         {
@@ -134,7 +142,7 @@ namespace FileLinqApp
             {
                 1, 7, 2, 61, 14
             };
-            List<int> sortedNumbers = numbers.OrderBy(number => number).ToList();
+            List<int> sortedNumbers = numbers.OrderBy(n => n).ToList();
             foreach (int number in sortedNumbers)
                 Console.WriteLine(number);
         }
