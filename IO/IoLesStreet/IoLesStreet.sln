@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoLesStreet", "IoLesStreet\IoLesStreet.csproj", "{D2F7FA36-F81F-432E-A3A0-E530B34478A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoLesStreetApp", "IoLesStreetApp\IoLesStreetApp.csproj", "{C7FA8A33-BE7A-4BEB-BD71-20BB19695C8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2F7FA36-F81F-432E-A3A0-E530B34478A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F7FA36-F81F-432E-A3A0-E530B34478A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F7FA36-F81F-432E-A3A0-E530B34478A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F7FA36-F81F-432E-A3A0-E530B34478A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FA8A33-BE7A-4BEB-BD71-20BB19695C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FA8A33-BE7A-4BEB-BD71-20BB19695C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FA8A33-BE7A-4BEB-BD71-20BB19695C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FA8A33-BE7A-4BEB-BD71-20BB19695C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE620933-82B4-45EA-8E6D-26045E34CB9F}
+	EndGlobalSection
+EndGlobal

@@ -67,7 +67,7 @@ namespace FileLinqApp
 
         public static void Test3()
         {
-            List<int> numbers = new List<int>()
+            List<int> numbers = new()
             {
                 1, 2, 4, 8, 16, 32
             };
@@ -78,7 +78,7 @@ namespace FileLinqApp
 
         public static void Test4()
         {
-            List<int> numbers = new List<int>()
+            List<int> numbers = new()
             {
                 1, 2, 4, 8, 16, 32
             };
@@ -89,11 +89,11 @@ namespace FileLinqApp
 
         public static void Test5()
         {
-            List<int> numbers = new List<int>()
+            List<int> numbers = new()
             {
                  1, 2, 4, 7, 8, 16, 29, 32, 64, 128
             };
-            List<int> excludedNumbers = new List<int>()
+            List<int> excludedNumbers = new()
             {
                  7, 29
             };
@@ -104,7 +104,7 @@ namespace FileLinqApp
 
         public static void Test6()
         {
-            List<User> listOfUsers = new List<User>()
+            List<User> listOfUsers = new()
             {
                     new User() { Name = "John Doe", Age = 42 },
                     new User() { Name = "Jane Doe", Age = 34 },
@@ -119,7 +119,7 @@ namespace FileLinqApp
 
         public static void Test7()
         {
-            List<int> numbers = new List<int>()
+            List<int> numbers = new()
             {
                 1, 2, 4, 8, 16, 32
             };
@@ -130,7 +130,7 @@ namespace FileLinqApp
 
         public static void Test8()
         {
-            List<int> numbers = new List<int>()
+            List<int> numbers = new()
             {
                 1, 7, 2, 61, 14
             };
@@ -141,7 +141,7 @@ namespace FileLinqApp
 
         public static void Test9()
         {
-            List<string> cityNames = new List<string>()
+            List<string> cityNames = new()
             {
                 "Amsterdam", "Berlin", "London", "New York"
             };
@@ -152,7 +152,7 @@ namespace FileLinqApp
 
         public static void Test10()
         {
-            List<User> listOfUsers = new List<User>()
+            List<User> listOfUsers = new()
             {
                 new User() { Name = "John Doe", Mail = "john@doe.com", Age = 42 },
                 new User() { Name = "Jane Doe", Mail = "jane@doe.com", Age = 34 },
@@ -167,7 +167,7 @@ namespace FileLinqApp
 
         public static void Test11()
         {
-            List<User> listOfUsers = new List<User>()
+            List<User> listOfUsers = new()
             {
                 new User() { Name = "John Doe", Mail = "john@doe.com", Age = 42 },
                 new User() { Name = "Jane Doe", Mail = "jane@doe.com", Age = 42 },
@@ -192,7 +192,7 @@ namespace FileLinqApp
 
         public static void Test12()
         {
-            List<string> names = new List<string>()
+            List<string> names = new()
             {
                 "John Doe",
                 "Jane Doe",
@@ -206,7 +206,7 @@ namespace FileLinqApp
 
         public static void Test13()
         {
-            CultureInfo usCulture = new CultureInfo("en-US");
+            CultureInfo usCulture = new("en-US");
             XDocument xDoc = XDocument.Load("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
             var cubeNodes = xDoc.Descendants().Where(n => n.Name.LocalName == "Cube" && n.Attribute("currency") != null).ToList();
             var currencyRateItems = cubeNodes.Select(node => new
@@ -231,7 +231,7 @@ namespace FileLinqApp
 
         public static void Test14()
         {
-            List<User> listOfUsers = new List<User>()
+            List<User> listOfUsers = new()
             {
                 new User() { Name = "John Doe", Age = 42 },
                 new User() { Name = "Jane Doe", Age = 34 },
@@ -247,7 +247,7 @@ namespace FileLinqApp
 
         public static void Test15()
         {
-            List<User> listOfUsers = new List<User>()
+            List<User> listOfUsers = new()
             {
                 new User() { Name = "John Doe", Age = 42 },
                 new User() { Name = "Jane Doe", Age = 34 },
@@ -265,7 +265,7 @@ namespace FileLinqApp
 
         public static void Test16()
         {
-            List<User> listOfUsers = new List<User>()
+            List<User> listOfUsers = new()
             {
                 new User() { Name = "John Doe", Mail = "john@doe.com", Age = 42 },
                 new User() { Name = "Jane Doe", Mail = "jane@doe.com", Age = 34 },
