@@ -36,7 +36,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SportsStore.Models.Category">
-    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAgAAAAAAQAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Models\Category.cs</FileName>

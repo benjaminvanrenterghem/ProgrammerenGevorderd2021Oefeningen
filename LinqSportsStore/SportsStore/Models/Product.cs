@@ -4,12 +4,15 @@ namespace SportsStore.Models
 {
     public class Product
     {
+        #region Properties
         public int ProductId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        #endregion
 
-       public override bool Equals(object obj)
+        #region Methods
+        public override bool Equals(object obj)
         {
             return (obj is Product p) ? p.ProductId == ProductId : false;
         }
@@ -18,6 +21,7 @@ namespace SportsStore.Models
         {
             return HashCode.Combine(ProductId);
         }
+        #endregion
     }
 
 

@@ -14,7 +14,7 @@ namespace SportsStore.Models
         public string ShippingStreet { get; set; }
         public City ShippingCity { get; set; }
         public ICollection<OrderLine> OrderLines { get; private set; }
-        public decimal Total => OrderLines.Sum(o => o.Price * o.Quantity);
+        public decimal Total => OrderLines.Sum(o => o.Price * o.Quantity); // LINQ!!
         #endregion
 
         #region Constructors
