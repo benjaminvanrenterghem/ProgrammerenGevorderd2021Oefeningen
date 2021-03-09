@@ -214,15 +214,18 @@ namespace FileLinqApp
 
         public static void Test13()
         {
-            CultureInfo usCulture = new("en-US");
-            XDocument xDoc = XDocument.Load("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
-            var cubeNodes = xDoc.Descendants().Where(n => n.Name.LocalName == "Cube" && n.Attribute("currency") != null).ToList();
+            CultureInfo usCulture = new("en-US"); // om doubles in het amerikaanse tekstformaat correct te parsen, moeten we de juiste culture instellen
+            var xDoc = XDocument.Load("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"); // haalt xml data van het internet in 1 instructie
+            var cubeNodes = xDoc.Descendants()
+                .Where(n => n.Name.LocalName == "Cube" && n.Attribute("currency") != null).ToList(); // geef enkel de kinderen met attribuut "currency"
+            // met lambda kunnen we objecten maken van een naamloze klasse: gewoon new met accolades en properties
             var currencyRateItems = cubeNodes.Select(node => new
             {
                 Currency = node.Attribute("currency").Value,
-                Rate = double.Parse(node.Attribute("rate").Value, usCulture)
+                Rate = double.Parse(node.Attribute("rate").Value, usCulture) // van tekst naar double
             });
 
+            // Pagineer per 5 over de munten:
             int pageSize = 5, pageCounter = 0;
             var pageItems = currencyRateItems.Take(pageSize);
             while (pageItems.Count() > 0)
@@ -265,6 +268,7 @@ namespace FileLinqApp
 
             List<string> names = listOfUsers.Select(user => user.Name).ToList();
 
+            // We maken nieuwe User objecten aan - deze keer van een benoemde klasse; in de praktijk hebben we dan nieuwe object van klasse User zonder leeftijd:
             List<User> users = names.Select(name => new User { Name = name }).ToList();
 
             foreach (User user in users)
@@ -281,6 +285,7 @@ namespace FileLinqApp
                 new User() { Name = "Another Doe", Mail = "another@doe.com", Age = 15 },
             };
 
+            // We maken een nieuwe lijst van nieuwe objecten maar van een onbenoemde klasse:
             var simpleUsers = listOfUsers.Select(user => new
             {
                 Name = user.Name,
@@ -330,25 +335,6 @@ namespace FileLinqApp
                 new User { Name = "Jenna Doe", Age = 19, HomeCountry = "Germany" },
                 new User { Name = "James Doe", Age = 8, HomeCountry = "USA" },
             };
-            var usersGroupedByCountry = users.GroupBy(user => user.HomeCountry);
-            foreach (var group in usersGroupedByCountry)
-            {
-                Console.WriteLine("Users from " + group.Key + ":");
-                foreach (var user in group)
-                    Console.WriteLine("* " + user.Name);
-            }
-        }
-
-        public static void Test19()
-        {
-            var users = new List<User>()
-            {
-                new User { Name = "John Doe", Age = 42, HomeCountry = "USA" },
-                new User { Name = "Jane Doe", Age = 38, HomeCountry = "USA" },
-                new User { Name = "Joe Doe", Age = 19, HomeCountry = "Germany" },
-                new User { Name = "Jenna Doe", Age = 19, HomeCountry = "Germany" },
-                new User { Name = "James Doe", Age = 8, HomeCountry = "USA" },
-            };
             var usersGroupedByFirstLetters = users.GroupBy(user => user.Name.Substring(0, 2));
             foreach (var group in usersGroupedByFirstLetters)
             {
@@ -358,7 +344,7 @@ namespace FileLinqApp
             }
         }
 
-        public static void Test20()
+        public static void Test19()
         {
             var users = new List<User>()
         {
@@ -386,7 +372,7 @@ namespace FileLinqApp
             });
         }
 
-        public static void Test21()
+        public static void Test20()
         {
             var users = new List<User>()
             {
@@ -412,7 +398,7 @@ namespace FileLinqApp
         }
 
         static void Main(string[] args)
-        {
+        {            
             Test1();
             Test2();
             Test3();
@@ -424,16 +410,15 @@ namespace FileLinqApp
             Test9();
             Test10();
             Test11();
-            Test12();
-            Test13();
+            Test12();            
+            Test13();            
             Test14();
             Test15();
             Test16();
             Test17();
             Test18();
             Test19();
-            Test20();
-            Test21();
-        }
+            Test20();            
+          }
     }
 }

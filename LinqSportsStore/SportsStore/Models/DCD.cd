@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SportsStore.Models.Cart">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <AssociationLine Name="_lines" Type="SportsStore.Models.CartLine" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="4.412" />
+        <Point X="7.125" Y="4.412" />
+        <Point X="7.125" Y="2.171" />
+        <Point X="6.438" Y="2.171" />
+        <Point X="6.438" Y="1.796" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAEAAAAAABAEiAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Cart.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_lines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SportsStore.Models.CartLine">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Product" Type="SportsStore.Models.Product" FixedFromPoint="true">
+      <Path>
+        <Point X="6.75" Y="1.438" />
+        <Point X="7.5" Y="1.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\CartLine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SportsStore.Models.Category">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAgAAAAAAQAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SportsStore.Models.City">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SportsStore.Models.Customer">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAAAEAAAAAIAAAAAAQAQAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SportsStore.Models.Order">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAAACkAAAAAAABAAACAAAAAAAQAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderLines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SportsStore.Models.OrderLine">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SportsStore.Models.Product">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAgAAAAgAAAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
