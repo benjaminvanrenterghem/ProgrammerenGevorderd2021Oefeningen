@@ -117,10 +117,140 @@ namespace AdoNetLes
                 transaction.Rollback();
                 Console.WriteLine("Transaction rolled back");
             }
-        }     
+        }    
+        
+        static void PrintPlanes(SqlConnection conn, string airport)
+        {
+            // %: 0, 1 ... n karakters
+            // ?: 0 of 1 karakter
+            // LIKE '%@Name%' werkt niet! Het werkt wel als je de %-tekens concateneert; @Name moet herkend kunnen worden als parameter
+            SqlCommand cmd = new("SELECT * FROM Plane, Airport where Plane.AirportId = Airport.Id AND Airport.Name LIKE '%' + @Name + '%'", conn);
+
+            cmd.Parameters.Add("@Name", SqlDbType.VarChar);
+            cmd.Parameters["@Name"].Value = airport;
+
+            using SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                Console.WriteLine(sdr["Name"]);
+            }
+        }
+
+        static void Add(SqlConnection conn, string[] values)
+        {
+            // Create the transaction object by calling the BeginTransaction method on connection object
+            var transaction = conn.BeginTransaction();
+            var ok = true;
+            try
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+                    SqlCommand cmd = new(values[i], conn, transaction);
+                    var numberOfRows = cmd.ExecuteNonQuery();
+                    if (numberOfRows != 1)
+                    {
+                        transaction.Rollback();
+                        Console.WriteLine("Transaction rolled back");
+                        ok = false;
+                        break;
+                    }
+                }
+                if (ok)
+                    transaction.Commit();
+            }
+            catch
+            {
+                // If anything goes wrong, rollback the transaction
+                transaction.Rollback();
+                Console.WriteLine("Exception: transaction rolled back");
+            }
+        }
+
+        static void AddAirports(SqlConnection conn)
+        {
+            string[] airports = new string[] {
+                "INSERT INTO Airport(Name, City, Country) VALUES('Sa Carneiro', 'Porto', 'Portugal')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Portela','Lisboa','Portugal')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Faro','Faro','Portugal')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Madeira','Funchal','Portugal')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Ponta Delgada','S. Miguel','Portugal')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Orly','Paris','France')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Charles de Gaule','Paris','France')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Heathrow','Londres','United Kingdom')",
+                "INSERT INTO Airport(Name, City, Country) VALUES('Gatwick','Londres','United Kingdom')"
+            };
+            Add(conn, airports);
+        }
+
+        static void AddPlanes(SqlConnection conn)
+        {
+            // Via sub query id zoeken omdat deze door de autoincrement altijd oploopt
+            string[] planes = new string[]
+            {
+                "INSERT INTO Plane(Name, AirportId) SELECT 'Douglas DC-10', id FROM Airport WHERE Name = 'Orly'",
+                "INSERT INTO Plane(Name, AirportId) SELECT 'Boeing 737', id FROM Airport WHERE Name = 'Madeira'",
+                "INSERT INTO Plane(Name, AirportId) SELECT 'Boeing 747', id FROM Airport WHERE Name = 'Orly'",
+                "INSERT INTO Plane(Name, AirportId) SELECT 'Airbus A300', id FROM Airport WHERE Name = 'Gatwick'",
+                "INSERT INTO Plane(Name, AirportId) SELECT 'Airbus A340', id FROM Airport WHERE Name = 'Faro'"
+            };
+            Add(conn, planes);
+        }
+
+        static void ClearPlaneDb(SqlConnection conn)
+        {
+            try
+            {
+                // -----------------
+                // let op volgorde!! Veeg eerst de vliegtuigen uit, want anders kan je tabel Airport niet leegmaken door referentiele integriteitsregel
+                // -----------------
+                SqlCommand deleteCommand = new("DELETE FROM Plane", conn); // maak tabel Plane leeg
+                var numberOfRows = deleteCommand.ExecuteNonQuery();
+                deleteCommand = new("DELETE FROM Airport", conn);
+                numberOfRows = deleteCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Delete faalde: " + e.Message);
+            }
+        }
+
+        /*
+         -- clustered index op id; slechts 1 clustered index per tabel in sqlserver; index: om vragen dramatisch te versnellen
+         CREATE TABLE   Airport (
+                        Id      INT            IDENTITY (1, 1) NOT NULL,
+                        Name    NVARCHAR (500) NOT NULL,
+                        City    NVARCHAR (128) NOT NULL,
+                        Country NVARCHAR (128) NOT NULL,
+                        PRIMARY KEY CLUSTERED (Id ASC)
+         );
+
+        CREATE TABLE Plane (
+                        Id        INT            IDENTITY (1, 1) NOT NULL,
+                        Name      NVARCHAR (128) NOT NULL,
+                        AirportId INT            NOT NULL,
+                        PRIMARY KEY CLUSTERED ([Id] ASC),
+                        FOREIGN KEY (AirportId) REFERENCES Airport (Id)
+        );
+         */
+
+        static void AirportAssignment()
+        {
+            // We maken van een groter probleem verschillende kleintjes...
+            using (SqlConnection conn = new(@"Data Source=.\SQLEXPRESS;Initial Catalog=PlaneDb;Integrated Security=True;Pooling=False"))
+            {                
+                conn.Open();
+                ClearPlaneDb(conn); // we maken de databank leeg
+                PrintPlanes(conn, "Orly"); // we drukken alle vliegtuigen op luchthaven Orly af
+                AddAirports(conn); // we voegen luchthavens toe aan de database
+                AddPlanes(conn); // we voegen vliegtuigen toe aan de database
+                PrintPlanes(conn, "Orly");
+            }
+        }
 
         static void Main(string[] args)
         {
+            AirportAssignment();
+
             SqlConnection conn = null; // in dit geval zou using een betere optie zijn... 
             try
             {
