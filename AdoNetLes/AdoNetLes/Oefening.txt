@@ -1,0 +1,30 @@
+﻿Tabel airport
+
+	id: int, primary key, identity
+	name: nvarchar(500)
+	city: nvarchar(128)
+	country: nvarchar(128)
+
+Tabel plane
+
+	id: int, primary key, identity
+	name: nvarchar(3)
+	airport_id: int
+
+INSERT INTO airport  VALUES  (1,'Sa Carneiro','Porto','Portugal');
+INSERT INTO airport  VALUES  (3,'Portela','Lisboa','Portugal');
+INSERT INTO airport  VALUES  (5,'Faro','Faro','Portugal');
+INSERT INTO airport  VALUES  (2,'Madeira','Funchal','Portugal');
+INSERT INTO airport  VALUES  (4,'Ponta Delgada','S. Miguel','Portugal');
+INSERT INTO airport  VALUES  (9,'Orly','Paris','France');
+INSERT INTO airport  VALUES  (8,'Charles de Gaule','Paris','France');
+INSERT INTO airport  VALUES  (11,'Heathrow','Londres','United Kingdom');
+INSERT INTO airport  VALUES  (12,'Gatwick','Londres','United Kingdom');
+
+1. Maak een database in SQLEXPRESS die noemt PlaneDb
+2. Maak bovenstaande tabellen aan
+3. Voeg vanuit C# code met ADO .NET de vliegvelden toe (zie queries hierboven) en doe dit in een enkele transactie
+4. Voeg een aantal vliegtuigen toe op de luchthavens
+5. Implementeer in C# volgende vraag: toon op de console alle vliegtuigen van de luchthaven 'Orly'
+
+

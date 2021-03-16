@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[klas]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [klasnaam] NVARCHAR(50) NOT NULL
+)
