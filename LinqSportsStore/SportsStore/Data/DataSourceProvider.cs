@@ -42,8 +42,8 @@ namespace SportsStore.Data
         {
             if (_categories != null)
                 return;
-            Category watersports = new Category() { Name = "WaterSports" };
-            Category soccer = new Category() { Name = "Soccer" };
+            Category watersports = new () { Name = "WaterSports" };
+            Category soccer = new () { Name = "Soccer" };
             _categories = new List<Category> { watersports, soccer };
 
             soccer.AddProduct("Football", 25, "WK colors");
@@ -63,7 +63,7 @@ namespace SportsStore.Data
             for (int i = 1; i < 10; i++)
             {
                 int j = i / 2;
-                Customer klant = new Customer
+                Customer klant = new()
                 {
                     CustomerName = "student" + j,
                     Name = "Student" + j,
@@ -74,7 +74,7 @@ namespace SportsStore.Data
                 _customers.Add(klant);
                 if (i <= 5)
                 {
-                    Cart cart = new Cart();
+                    Cart cart = new();
                     cart.AddLine(soccer.FindProduct("Football"), 1);
                     cart.AddLine(soccer.FindProduct("Corner flags"), 2);
                     klant.PlaceOrder(cart, DateTime.Today, false, klant.Street, klant.City);
