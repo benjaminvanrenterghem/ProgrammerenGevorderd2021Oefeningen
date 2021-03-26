@@ -10,6 +10,7 @@ namespace SportsStore.Contracts
         public string Name { get; set; }
         public string FirstName { get; set; }
         public string Street { get; set; }
+
         public City City { get; set; }
 
         public List<Order> Orders { get; set; } = new List<Order>();

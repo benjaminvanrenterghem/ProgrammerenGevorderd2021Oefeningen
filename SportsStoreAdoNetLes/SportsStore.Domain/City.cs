@@ -11,6 +11,7 @@ namespace SportsStore.Domain
         #endregion
 
         #region Properties
+        public Contracts.City Data { get { return _data; } }
         public int Id { get => _data.Id; set { if (_data.Id != value) { _data.Id = value; } } }
         public string PostalCode { get { return _data.PostalCode; } set { if (_data.PostalCode != value) { _data.PostalCode = value; _isDirty = true; } } }
         public string Name { get { return _data.Name; } set { if (_data.Name != value) { _data.Name = value; _isDirty = true; } } }
