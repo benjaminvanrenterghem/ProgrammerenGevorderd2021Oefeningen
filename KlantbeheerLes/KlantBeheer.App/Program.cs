@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Klantbeheer.Domain;
+using System;
 
 namespace KlantBeheer.App
 {
@@ -6,7 +7,9 @@ namespace KlantBeheer.App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var user = new User { Id = 1, Name = "Luc" };
+
+            Console.WriteLine(user);
         }
     }
 }

@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KlantBeheer.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="300" Width="1024">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="dgSimple" Grid.Row="0" Grid.ColumnSpan="2"></DataGrid>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click" Margin="2"/>
+            <Button Name="btnUpdateDetail" Content="Update Name" Click="btnUpdateDetail_Click" Margin="2"/>
+        </StackPanel>
     </Grid>
 </Window>
