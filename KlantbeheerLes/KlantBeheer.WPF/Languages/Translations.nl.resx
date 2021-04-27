@@ -118,129 +118,129 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add" xml:space="preserve">
-    <value>Add</value>
+    <value>Voeg toe</value>
   </data>
   <data name="Address" xml:space="preserve">
-    <value>Address</value>
+    <value>Adres</value>
   </data>
   <data name="AddressTag" xml:space="preserve">
-    <value>Address: </value>
+    <value>Adres: </value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Sluiten</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Bevestig</value>
   </data>
   <data name="Customer" xml:space="preserve">
-    <value>Customer</value>
+    <value>Klant</value>
   </data>
   <data name="CustomerData" xml:space="preserve">
-    <value>Provide all data of customer!</value>
+    <value>Geef alle klantgegevens op!</value>
   </data>
   <data name="CustomerInList" xml:space="preserve">
-    <value>Customer already exists!</value>
+    <value>Klant bestaat al!</value>
   </data>
   <data name="CustomerNameTag" xml:space="preserve">
-    <value>Name Customer:</value>
+    <value>Klantnaam:</value>
   </data>
   <data name="Customers" xml:space="preserve">
-    <value>Customers</value>
+    <value>Klanten</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>Datum</value>
   </data>
   <data name="DeleteCustomer" xml:space="preserve">
-    <value>Are you sure you want to delete this customer?</value>
+    <value>Bent u zeker dat u deze klant wilt verwijderen?</value>
   </data>
   <data name="DeleteOrder" xml:space="preserve">
-    <value>Are you sure you want to delete this order?</value>
+    <value>Bent u zeker dat u deze bestelling wilt verwijderen?</value>
   </data>
   <data name="DeleteProduct" xml:space="preserve">
-    <value>Are you sure you want to delete this product?</value>
+    <value>Zeker dat je het product wenst te verwijderen?</value>
   </data>
   <data name="Dutch" xml:space="preserve">
-    <value>Dutch</value>
+    <value>Nederlands</value>
   </data>
   <data name="English" xml:space="preserve">
-    <value>English</value>
+    <value>Engels</value>
   </data>
   <data name="ExceptionMessage" xml:space="preserve">
-    <value>An unhandled exception just occurred: </value>
+    <value>Er deed zich een fout voor: </value>
   </data>
   <data name="ExceptionSample" xml:space="preserve">
-    <value>Exception Sample</value>
+    <value> probleemvoorbeeld</value>
   </data>
   <data name="False" xml:space="preserve">
-    <value>No</value>
+    <value>Nee</value>
   </data>
   <data name="File" xml:space="preserve">
-    <value>File</value>
+    <value>Bestand</value>
   </data>
   <data name="Languages" xml:space="preserve">
-    <value>Languages</value>
+    <value>Talen</value>
   </data>
   <data name="Management" xml:space="preserve">
-    <value>Management</value>
+    <value>Beheer</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Naam</value>
   </data>
   <data name="NameTag" xml:space="preserve">
-    <value>Name: </value>
+    <value>Naam: </value>
   </data>
   <data name="NumberProductsTag" xml:space="preserve">
-    <value>Number of products:</value>
+    <value>Aantal producten:</value>
   </data>
   <data name="Order" xml:space="preserve">
-    <value>Order</value>
+    <value>Bestelling</value>
   </data>
   <data name="OrderID" xml:space="preserve">
-    <value>Order number</value>
+    <value>Bestellingsnummer</value>
   </data>
   <data name="Orders" xml:space="preserve">
-    <value>Orders</value>
+    <value>Bestellingen</value>
   </data>
   <data name="OrdersTag" xml:space="preserve">
-    <value>Orders:</value>
+    <value>Bestellingen:</value>
   </data>
   <data name="Ordersystem" xml:space="preserve">
-    <value>Ordersystem</value>
+    <value>Bestellingssysteem</value>
   </data>
   <data name="Paid" xml:space="preserve">
-    <value>Paid</value>
+    <value>Betaald</value>
   </data>
   <data name="PaidTag" xml:space="preserve">
-    <value>Paid:</value>
+    <value>Betaald:</value>
   </data>
   <data name="Price" xml:space="preserve">
-    <value>Price</value>
+    <value>Prijs</value>
   </data>
   <data name="PricePaid" xml:space="preserve">
-    <value>Price Paid</value>
+    <value>Prijs Betaald</value>
   </data>
   <data name="PriceTag" xml:space="preserve">
-    <value>Price:</value>
+    <value>Prijs:</value>
   </data>
   <data name="ProductData" xml:space="preserve">
-    <value>Provide all data of the product!</value>
+    <value>Geef alle productgegevens op!</value>
   </data>
   <data name="ProductInList" xml:space="preserve">
-    <value>Product already exists!</value>
+    <value>Product bestaat al!</value>
   </data>
   <data name="Products" xml:space="preserve">
-    <value>Products</value>
+    <value>Producten</value>
   </data>
   <data name="ProductsTag" xml:space="preserve">
-    <value>Products:</value>
+    <value>Producten:</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Verwijder</value>
   </data>
   <data name="Time" xml:space="preserve">
-    <value>Time</value>
+    <value>Tijdstip</value>
   </data>
   <data name="True" xml:space="preserve">
-    <value>Yes</value>
+    <value>Ja</value>
   </data>
 </root>

@@ -1,7 +1,5 @@
-﻿using System.Windows;
-using Microsoft.Extensions.DependencyInjection; // Microsoft Dependency Injection
-using Repository.ADO;
-using Repository.Interfaces;
+﻿using KlantBeheer.WPF.Languages;
+using System.Windows;
 
 namespace KlantBeheer.WPF
 {
@@ -10,17 +8,17 @@ namespace KlantBeheer.WPF
     /// </summary>
     public partial class App : Application
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private App()
         {
-            // Register our types in the container
-            Context.ServiceCollection.AddScoped<ICustomerManager, CustomerManager>(); // ik maak "dienst" (service) ICustomerManager bekend en zeg dat een object van class CustomerManager deze dienst levert
+            Translations.Culture = new System.Globalization.CultureInfo("nl-BE"); // en-US nl-BE
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            MessageBox.Show("An unhandled exception just occurred: "
-            + e.Exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-            e.Handled = true; // Aangeven dat je zelf de exception opving en dat de applicatie mag doorgaan in plaats van volledig te stoppen en alle ingaves zonder meer kwijt te zijn
+            MessageBox.Show(Translations.ExceptionMessage
+            + e.Exception.Message, Translations.ExceptionSample, MessageBoxButton.OK, MessageBoxImage.Warning);
+            // We zeggen hier dat de exception door ons afgehandeld is
+            e.Handled = true;
         }
     }
 }

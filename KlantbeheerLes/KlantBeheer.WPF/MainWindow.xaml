@@ -3,84 +3,86 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KlantBeheer.WPF" 
-        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        xmlns:langs="clr-namespace:KlantBeheer.WPF.Languages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="1024" Background="{DynamicResource WindowBackgroundBrush}">
-    <Window.Resources>
-        <sys:String x:Key="strHelloWorld">Hello, world!</sys:String>
-        <LinearGradientBrush x:Key="WindowBackgroundBrush">
-            <GradientStop Offset="0" Color="Blue"/>
-            <GradientStop Offset="0.5" Color="Red"/>
-            <GradientStop Offset="1" Color="Green"/>
-        </LinearGradientBrush>
-    </Window.Resources>
-    <Grid Margin="10">
+        Title="{x:Static langs:Translations.Ordersystem}" Height="450" Width="800"
+        Icon="Images/cart.png"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"/> <!-- menu -->
+            <RowDefinition Height="*"/> <!-- rest -->
+            <RowDefinition Height="Auto"/> <!-- statusbar -->
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <Menu Grid.Row="0" Grid.ColumnSpan="2">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New" />
-                <MenuItem Header="_Open" />
-                <MenuItem Header="_Save" />
-                <Separator />
-                <MenuItem Header="_Exit" />
-            </MenuItem>
-        </Menu>
-
-        <DataGrid Name="dgSimple" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naam" Binding="{Binding Name,Mode=TwoWay}" />
-                <DataGridTemplateColumn Header="Birthday">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding Birthday,Mode=TwoWay}" BorderThickness="0" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-            <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click" Margin="2"/>
-            <Button Name="btnUpdateDetail" Content="Update Name" Click="btnUpdateDetail_Click" Margin="2"/>
-        </StackPanel>
-
-        <StatusBar Grid.Row="3" Grid.ColumnSpan="2">
-            <StatusBar.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="100" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ItemsPanelTemplate>
-            </StatusBar.ItemsPanel>
-            <StatusBarItem>
-                <TextBlock Name="lblCursorPosition" />
-            </StatusBarItem>
-            <Separator Grid.Column="1" />
-            <StatusBarItem Grid.Column="2">
-                <TextBlock Text="{StaticResource strHelloWorld}" FontSize="56"/>
-            </StatusBarItem>
-            <Separator Grid.Column="3" />
-            <StatusBarItem Grid.Column="4">
-                <ProgressBar Value="50" Width="90" Height="16" />
-            </StatusBarItem>
-        </StatusBar>
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="{x:Static langs:Translations.File}">
+                    <MenuItem Header="{x:Static langs:Translations.Close}" Click="MenuItemSluiten_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/KlantBeheer.WPF;component/Images/circled-x.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{x:Static langs:Translations.Management}">
+                    <MenuItem Header="{x:Static langs:Translations.Customers}" Click="MenuItem_Klanten_Click">
+                        <MenuItem.Icon>
+                            <!-- Build action: content, Copy to Output Directory -->
+                            <Image Source="/KlantBeheer.WPF;component/Images/group.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{x:Static langs:Translations.Products}" Click="MenuItem_Producten_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/KlantBeheer.WPF;component/Images/pizza.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{x:Static langs:Translations.Orders}" Click="MenuItem_Bestellingen_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/KlantBeheer.WPF;component/Images/basket.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblKlant" Grid.Row="0" Grid.Column="0" Margin="5" Content="{x:Static langs:Translations.CustomerNameTag}" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbKlant" Grid.Row="0" Grid.Column="1" Margin="5" MinWidth="250" KeyUp="TextBox_KeyUp" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="cbKlanten" Grid.Row="0" Grid.Column="2" Margin="5" DisplayMemberPath="Name" SelectedValuePath="Name" VerticalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged"/>
+            <Label x:Name="lblBestellingen" Grid.Row="1" Grid.Column="0" Margin="5" Content="{x:Static langs:Translations.OrdersTag}"/>
+            <DataGrid x:Name="dgOrderSelection" Grid.Row="2" Grid.ColumnSpan="3" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="Gray" IsReadOnly="True" SelectionChanged="DataGrid_SelectionChanged" MouseDoubleClick="dgOrderSelection_MouseDoubleClick">
+                <DataGrid.Columns >
+                    <!-- we linken ons aan een property van de class Klant: -->
+                    <DataGridTextColumn  Header="{x:Static langs:Translations.OrderID}" Binding="{Binding OrderID}" MinWidth="100" Width="auto"/>
+                    <DataGridCheckBoxColumn  Header="{x:Static langs:Translations.Paid}" Binding="{Binding IsPaid}" MinWidth="50" Width="auto"/>
+                    <DataGridTextColumn  Header="{x:Static langs:Translations.Time}" Binding="{Binding OrderTime}" MinWidth="100" Width="*"/>
+                    <DataGridTextColumn  Header="{x:Static langs:Translations.Price}" Binding="{Binding PricePaid, ConverterCulture='nl-BE', StringFormat={}{0:N2} Euro}" MinWidth="100" Width="*"/>
+                    <DataGridTemplateColumn Header="" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="{StaticResource RemoveButton}" Click="DeleteButton_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Grid.Row="3" Grid.Column="2" Name="btnNieuweBestelling" Content="{StaticResource AddButton}" Click="MaakBestelling_Click" HorizontalAlignment="Right" Margin="5" IsEnabled="False"/>
+        </Grid>
+        <DockPanel Grid.Row="2">
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem>
+                    <TextBlock Name="TbStatusInformation"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
     </Grid>
 </Window>
-    
-    <!-- MVVMLight: Command "binden" -->

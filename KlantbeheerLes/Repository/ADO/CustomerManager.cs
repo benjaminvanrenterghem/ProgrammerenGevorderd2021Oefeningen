@@ -15,7 +15,7 @@ namespace Repository.ADO
 
             var connection = Repository.DbConfig.Connection;
 
-            string q = "INSERT INTO [dbo.Customer] (Name, Address) output INSERTED.CustomerID VALUES(@Name, @Address)";
+            string q = "INSERT INTO [Customer] (Name, Address) output INSERTED.CustomerID VALUES(@Name, @Address)";
 
             using(var command = connection.CreateCommand())
             {
@@ -54,7 +54,7 @@ namespace Repository.ADO
 
             var connection = Repository.DbConfig.Connection;
 
-            string q = "UPDATE [dbo.Customer] Name = @Name, Address = @Address WHERE CustomerID = @Id";
+            string q = "UPDATE [Customer] Name = @Name, Address = @Address WHERE CustomerID = @Id";
 
             using (var command = connection.CreateCommand())
             {
@@ -96,8 +96,8 @@ namespace Repository.ADO
             if (customer?.Id == null || customer.Id <= 0) throw new CustomerException("Remove customer: Customer Id is invalid.");
 
             var connection = Repository.DbConfig.Connection;
-            string queryO = "UPDATE [dbo].[Order] SET CustomerID = @customerID WHERE CustomerID = @cID";
-            string queryC = "DELETE FROM [dbo].[Customer] WHERE CustomerID = @cID";
+            string queryO = "UPDATE [Order] SET CustomerID = @customerID WHERE CustomerID = @cID";
+            string queryC = "DELETE FROM [Customer] WHERE CustomerID = @cID";
 
             using (SqlCommand command1 = connection.CreateCommand())
             using (SqlCommand command2 = connection.CreateCommand())
@@ -140,7 +140,7 @@ namespace Repository.ADO
         {
             var customers = new List<Klantbeheer.Domain.DataObject>();
             var connection = Repository.DbConfig.Connection;
-            string query = "SELECT * FROM [dbo].[Customer]";
+            string query = "SELECT * FROM [Customer]";
 
             using (SqlCommand command = connection.CreateCommand())
             {
@@ -185,7 +185,7 @@ namespace Repository.ADO
             if (id <= 0) throw new CustomerException("Customer Id is invalid.");
 
             var connection = Repository.DbConfig.Connection;
-            string query = "SELECT * FROM [dbo].[Customer] WHERE CustomerID = @id";
+            string query = "SELECT * FROM [Customer] WHERE CustomerID = @id";
 
             using (SqlCommand command = connection.CreateCommand())
             {
