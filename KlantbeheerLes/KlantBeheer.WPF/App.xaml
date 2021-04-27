@@ -1,12 +1,15 @@
 ﻿<Application x:Class="KlantBeheer.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:KlantBeheer.WPF" StartupUri="MainWindow.xaml"
+             xmlns:local="clr-namespace:KlantBeheer.WPF" StartupUri="Customers.xaml"
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
             >
     <!--  StartupUri="MainWindow.xaml" -->
     <!-- Startup="Application_Startup"-->
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Image x:Key="RemoveButton" Source="/KlantBeheer.WPF;component/Images/trash.png" x:Shared="false" Width="17" Height="17"/>
+            <Image x:Key="AddButton" Source="/KlantBeheer.WPF;component/Images/circled-plus.png" x:Shared="false" Width="17" Height="17"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

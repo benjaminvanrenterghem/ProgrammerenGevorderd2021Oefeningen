@@ -15,7 +15,7 @@ namespace KlantBeheer.WPF
     public partial class MainWindow : Window
     {
         // Voor WPF updating: gebruik niet List<> maar ObservableCollection<>; deze gebruikt de uiterst belangrijke interface INotifyPropertyChanged
-        private ObservableCollection<UserViewModel> _users = new();
+        private ObservableCollection<UserViewModel> _users = new();     
 
         private CustomerManager _customerManager = new();
 
@@ -40,7 +40,7 @@ namespace KlantBeheer.WPF
 
         private void btnUpdateDetail_Click(object sender, RoutedEventArgs e)
         {
-            _users[3].Name = "Luc Vervoort";
+            _users[3].Name = "Jefke";
         }
     }
 }

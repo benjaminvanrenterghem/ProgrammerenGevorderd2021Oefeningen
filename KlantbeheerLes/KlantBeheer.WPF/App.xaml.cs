@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection; // Microsoft Dependency Injection
 using Repository.ADO;
 using Repository.Interfaces;
 
@@ -13,7 +13,7 @@ namespace KlantBeheer.WPF
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             // Register our types in the container
-            //Context.ServiceCollection.AddScoped<ICustomerManager, CustomerManager>();
+            Context.ServiceCollection.AddScoped<ICustomerManager, CustomerManager>(); // ik maak "dienst" (service) ICustomerManager bekend en zeg dat een object van class CustomerManager deze dienst levert
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
