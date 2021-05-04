@@ -20,9 +20,10 @@
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="dgKlanten" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="Gray" CommandManager.PreviewExecuted="DgKlanten_PreviewDeleteCommandHandler">
             <DataGrid.Columns>
-                <!-- we linken ons aan een property van de class Klant: -->
-                <DataGridTextColumn Header="{x:Static langs:Translations.Name}" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{x:Static langs:Translations.Address}" Binding="{Binding Address}" Width="*" IsReadOnly="True"/>
+                <!-- we linken ons aan een property van de class Customer: -->
+                <!-- Mode=TwoWay is kostelijker in performantie; TwoWay is niet enkel van code behind naar user interface, maar ook omgekeerd -->
+                <DataGridTextColumn Header="{x:Static langs:Translations.Name}" Binding="{Binding Name, Mode=TwoWay}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{x:Static langs:Translations.Address}" Binding="{Binding Address, Mode=TwoWay}" Width="*" IsReadOnly="True"/>
                 <DataGridTemplateColumn Header="" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

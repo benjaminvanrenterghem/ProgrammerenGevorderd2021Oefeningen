@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using Klantbeheer.Domain;
 using Klantbeheer.Domain.Exceptions.ModelExceptions;
 using KlantBeheer.WPF.Languages;
+using KlantBeheer.WPF.UserModels;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace KlantBeheer.WPF
@@ -15,8 +16,9 @@ namespace KlantBeheer.WPF
     public partial class Klanten : Window
     {
         #region Properties
-        // Interface INotifyPropertyChanged
-        private ObservableCollection<Customer> _customers;
+        // Een "lijst" van objecten die WPF steeds moet volgen in de zin van: object uit lijst is object niet meer tonen en object bij is object wel tonen => ObservableCollection
+        // Implementeert namelijk interface INotifyPropertyChanged
+        private ObservableCollection<CustomerViewModel> _customers;
         #endregion
 
         #region Ctor
@@ -24,12 +26,12 @@ namespace KlantBeheer.WPF
         {
             InitializeComponent();
             var objects = Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().GetAll(); //Context.CustomerManager.GetAll();
-            _customers = new ObservableCollection<Customer>(); 
+            _customers = new ObservableCollection<CustomerViewModel>(); 
             foreach(var o in objects)
             {
-                _customers.Add(o as Customer);
+                _customers.Add(new CustomerViewModel(o as Customer));
             }
-            dgKlanten.ItemsSource = _customers;
+            dgKlanten.ItemsSource = _customers; // bron van de gegevens!
             _customers.CollectionChanged += _klanten_CollectionChanged;
         }
         #endregion
@@ -44,17 +46,17 @@ namespace KlantBeheer.WPF
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (Customer customer in e.OldItems)
+                foreach (CustomerViewModel customer in e.OldItems)
                 {
-                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Remove(customer); //Context.CustomerManager.GetAll();
+                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Remove(customer.Value); //Context.CustomerManager.GetAll();
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (Customer customer in e.NewItems)
+                foreach (CustomerViewModel customer in e.NewItems)
                 {
                     // klant wordt toegevoegd en id wordt teruggeworpen
-                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Add(customer); //customer.SetCustomerID(Context.CustomerManager.Add(customer));
+                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Add(customer.Value); //customer.SetCustomerID(Context.CustomerManager.Add(customer));
                 }
             }            
         }
@@ -99,7 +101,8 @@ namespace KlantBeheer.WPF
             }
             // Omdat we een ObservableCollection<Klant> gebruiken, wordt onze wijziging meteen doorgegeven naar de gui (.Items wijzigen zou threading problemen geven):
             // Omdat we ObservableCollection<Klant> gebruiken en er een event gekoppeld is aan delete/add hiervan, wordt ook de business layer aangepast!
-            _customers.Add(customer);
+            _customers.Add(new CustomerViewModel(customer));
+            // LVET TODO: databank op orde stellen!
 
             TbKlantNaam.Text = null;
             TbKlantAdres.Text = null;
@@ -132,7 +135,8 @@ namespace KlantBeheer.WPF
                 // Cancel Delete.
                 e.Handled = true;
             }
-            else _customers.Remove(dgKlanten.SelectedItem as Customer);
+            else _customers.Remove(dgKlanten.SelectedItem as CustomerViewModel);
+            // LVET TODO: databank op orde stellen!
         }
         #endregion
     }

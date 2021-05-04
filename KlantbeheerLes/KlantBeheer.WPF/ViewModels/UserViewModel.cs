@@ -18,13 +18,13 @@ namespace KlantBeheer.WPF.UserModels
                 // Waarom if? Indien er geen wijziging nodig is, wordt user interface niet updated -> sneller!!
                 if (_user.Id != value)
                 {
-                    _user.Id = value; 
+                    _user.Id = value;
                     PropertyChanged(this, new PropertyChangedEventArgs(nameof(Id)));
                 }
             }
-        }
+        }   
 
-        public string Name
+    public string Name
         {
             get => _user.Name;
             set
@@ -54,9 +54,11 @@ namespace KlantBeheer.WPF.UserModels
             }
         }
 
+        #region Ctor
         public UserViewModel(User user)
         {
             _user = user;
         }
+        #endregion
     }
 }

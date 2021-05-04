@@ -7,9 +7,9 @@ namespace Klantbeheer.Domain
     public class Customer: DataObject
     {
         #region Properties
-        public string Name { get; private set; }
-        public string Address { get; private set; }
-        public int Discount { get; private set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public int Discount { get; set; }
 
         // lijst van Order
         #endregion
