@@ -59,7 +59,7 @@ namespace KlantBeheer.WPF
                 foreach (CustomerViewModel customer in e.NewItems)
                 {
                     // klant wordt toegevoegd en id wordt teruggeworpen
-                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Add(customer.Value); //customer.SetCustomerID(Context.CustomerManager.Add(customer));
+                    customer.Id = Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Add(customer.Value); //customer.SetCustomerID(Context.CustomerManager.Add(customer));
                 }
             }            
         }

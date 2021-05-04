@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Repository.Interfaces;
 
 namespace KlantBeheer.WPF
 {
@@ -6,6 +7,7 @@ namespace KlantBeheer.WPF
     {
         #region Properties
         //public static ICrud CustomerManager { get; } = new Repository.ADO.CustomerManager();
+        public static ICrud ProductManager { get; } = new Repository.Ado.ProductManager();
 
         private static ServiceProvider _serviceProvider;
 

@@ -1,0 +1,52 @@
+﻿<Window x:Class="KlantBestellingen.WPF.Producten"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:langs="clr-namespace:KlantBeheer.WPF.Languages"
+        xmlns:local="clr-namespace:KlantBestellingen.WPF"
+        mc:Ignorable="d"
+        Title="{x:Static langs:Translations.Products}" Height="450" Width="800"
+        Icon="Images/pizza.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgProducten" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="Gray" CommandManager.PreviewExecuted="DgProducten_PreviewDeleteCommandHandler">
+            <DataGrid.Columns>
+                <!-- we linken ons aan een property van de class Product: -->
+                <DataGridTextColumn Header="{x:Static langs:Translations.Name}" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{x:Static langs:Translations.Price}" Binding="{Binding Price, ConverterCulture='nl-BE', StringFormat={}{0:N2} Euro}" Width="*" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{StaticResource RemoveButton}" Click="DeleteButton_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="BtnNieuwProduct" Grid.Row="1" Grid.Column="0" Margin="5" Content="{StaticResource AddButton}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Click="BtnNieuwProduct_Click" IsEnabled="False"/>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+            <!-- een Grid schaalt automatisch mee! -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{x:Static langs:Translations.NameTag}" Grid.Row="0" Grid.Column="0" Margin="0,0,5,0"/>
+            <TextBox x:Name="TbProductNaam" Grid.Row="0" Grid.Column="1" MinWidth="150" Margin="0,0,5,0" KeyUp="Tb_KeyUp"/>
+            <TextBlock Text="{x:Static langs:Translations.PriceTag}" Grid.Row="0" Grid.Column="2" Margin="0,0,5,0"/>
+            <TextBox x:Name="TbProductPrijs" Grid.Row="0" Grid.Column="3" MinWidth="300" KeyUp="Tb_KeyUp"/>
+        </Grid>
+    </Grid>
+</Window>

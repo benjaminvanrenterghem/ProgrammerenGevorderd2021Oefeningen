@@ -8,6 +8,7 @@ using Klantbeheer.Domain;
 using System.Collections.Generic;
 using KlantBeheer.WPF.Languages;
 using Microsoft.Extensions.DependencyInjection;
+using KlantBestellingen.WPF;
 
 namespace KlantBeheer.WPF
 {
@@ -18,7 +19,7 @@ namespace KlantBeheer.WPF
     {
         #region Properties
         private Klanten _customerWindow = new();
-        //private Producten _productenWindow = new();
+        private Producten _productenWindow = new();
         //private Bestellingen _bestellingenWindow = new();
         //private DetailsBestelling _bestellingDetailWindow = new();
         #endregion
@@ -29,7 +30,7 @@ namespace KlantBeheer.WPF
             InitializeComponent();
             Closing += MainWindow_Closing;
             _customerWindow.Closing += _Window_Closing;
-            //_productenWindow.Closing += _Window_Closing;
+            _productenWindow.Closing += _Window_Closing;
             //_bestellingenWindow.Closing += _Window_Closing;
             //_bestellingDetailWindow.Closing += _Window_Closing;
             //_bestellingDetailWindow.UpdateEvent += Refresh;
@@ -84,8 +85,7 @@ namespace KlantBeheer.WPF
         /// <param name="e"></param>
         private void MenuItem_Producten_Click(object sender, RoutedEventArgs e)
         {
-            //if (_productenWindow != null)
-            //    _productenWindow.Show();
+            _productenWindow?.Show();
         }
 
         /// <summary>

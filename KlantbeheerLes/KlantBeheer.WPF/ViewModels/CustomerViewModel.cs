@@ -22,7 +22,7 @@ namespace KlantBeheer.WPF.UserModels
                 if (_customer.Id != value)
                 {
                     _customer.Id = value;
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(Id)));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Id)));
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace KlantBeheer.WPF.UserModels
                 if (_customer.Name != value) // we doen deze bescherming voor performantie: als de waarde dezelfde is, geen update van de user interface!
                 {
                     _customer.Name = value;
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(Name)));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
                 }
             }
         }
@@ -48,7 +48,7 @@ namespace KlantBeheer.WPF.UserModels
                 if (_customer.Address != value)
                 {
                     _customer.Address = value;
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(Address)));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Address)));
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace KlantBeheer.WPF.UserModels
                 if (_customer.Discount != value)
                 {
                     _customer.Discount = value;
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(Discount)));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Discount)));
                 }
             }
         }
