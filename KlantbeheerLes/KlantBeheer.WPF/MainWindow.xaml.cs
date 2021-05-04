@@ -45,11 +45,11 @@ namespace KlantBeheer.WPF
         private void _Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // Sluit het venster niet echt af en verberg het: we kruipen tussen en vertellen WPF dat het afsluiten al gebeurd is
-            // We moeten de Hide() uitvoeren op de UI-thread (main thread)
+            // We moeten de Hide() uitvoeren op de UI-thread (main WPF thread) door Dispatcher te gebruiken: 
             Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, (DispatcherOperationCallback)delegate (object o)
             {
                 /* Nuttige code: */
-                ((Window)sender).Hide();
+                ((Window)sender).Hide(); // (Window) is een cast: sender is van type object en kan niet als Window gebruikt worden zonder meer
                 /* ... tot hier! */
                 return null;
             }, null);
@@ -74,8 +74,7 @@ namespace KlantBeheer.WPF
         /// <param name="e"></param>
         private void MenuItem_Klanten_Click(object sender, RoutedEventArgs e)
         {
-            if(_customerWindow != null)
-                _customerWindow.Show();
+            _customerWindow?.Show();
         }
 
         /// <summary>
@@ -108,6 +107,7 @@ namespace KlantBeheer.WPF
         /// <param name="e"></param>
         private void MenuItemSluiten_Click(object sender, RoutedEventArgs e)
         {
+            // Met volgend statement sluiten we de WPF applicatie volledig af:
             Application.Current.Shutdown();
         }
 

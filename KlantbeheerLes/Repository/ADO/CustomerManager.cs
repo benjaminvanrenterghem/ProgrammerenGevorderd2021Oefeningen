@@ -9,6 +9,11 @@ namespace Repository.ADO
 
     public class CustomerManager: ICustomerManager
     {
+        public CustomerManager()
+        {
+            System.Diagnostics.Debug.WriteLine("Creating new instance of CustomerManager");
+        }
+
         public int Add(Klantbeheer.Domain.DataObject o)
         {
             // Precondities

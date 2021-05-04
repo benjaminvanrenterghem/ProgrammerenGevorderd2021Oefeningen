@@ -33,6 +33,9 @@ namespace KlantBeheer.WPF
             }
             dgKlanten.ItemsSource = _customers; // bron van de gegevens!
             _customers.CollectionChanged += _klanten_CollectionChanged;
+
+            // Om aan vertalingen te raken in de code behind:
+            // var s = Translations.CustomerNameTag;
         }
         #endregion
 
@@ -66,13 +69,13 @@ namespace KlantBeheer.WPF
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DgKlanten_PreviewDeleteCommandHandler(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void DgKlanten_PreviewCommandHandler(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
             if(e.Command == DataGrid.DeleteCommand)
             {
                 if (!(MessageBox.Show(Translations.DeleteCustomer, Translations.Confirm, MessageBoxButton.YesNo) == MessageBoxResult.Yes))
                 {
-                    // Cancel Delete.
+                    // Cancel Delete:
                     e.Handled = true;
                 }
             }

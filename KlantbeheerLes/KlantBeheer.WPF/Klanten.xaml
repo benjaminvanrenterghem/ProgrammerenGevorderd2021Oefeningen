@@ -18,7 +18,7 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgKlanten" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="Gray" CommandManager.PreviewExecuted="DgKlanten_PreviewDeleteCommandHandler">
+        <DataGrid x:Name="dgKlanten" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="Gray" CommandManager.PreviewExecuted="DgKlanten_PreviewCommandHandler">
             <DataGrid.Columns>
                 <!-- we linken ons aan een property van de class Customer: -->
                 <!-- Mode=TwoWay is kostelijker in performantie; TwoWay is niet enkel van code behind naar user interface, maar ook omgekeerd -->

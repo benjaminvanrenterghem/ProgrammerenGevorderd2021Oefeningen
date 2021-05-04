@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Repository.Interfaces;
 
 namespace KlantBeheer.WPF
 {
@@ -10,9 +9,11 @@ namespace KlantBeheer.WPF
 
         private static ServiceProvider _serviceProvider;
 
-        public static ServiceCollection ServiceCollection { get; set; } = new();
+        public static ServiceCollection ServiceCollection { get; set; } = new();        
         private static IServiceScope _serviceScope;
-        public static ServiceProvider ServiceProvider { get { if (_serviceProvider == null) _serviceProvider = ServiceCollection.BuildServiceProvider(true); _serviceScope = _serviceProvider.CreateScope(); return _serviceProvider; } }
+
+        // Voorbeeld van een singleton pattern: LAZY
+        public static ServiceProvider ServiceProvider { get { if (_serviceProvider == null) { _serviceProvider = ServiceCollection.BuildServiceProvider(true); _serviceScope = _serviceProvider.CreateScope(); } return _serviceProvider; } }
         #endregion
     }
 }
