@@ -7,9 +7,11 @@ namespace KlantBeheer.App
     {
         static void Main(string[] args)
         {
+            /*
             var user = new User { Id = 1, Name = "Luc" };
 
             Console.WriteLine(user);
+            */
         }
     }
 }

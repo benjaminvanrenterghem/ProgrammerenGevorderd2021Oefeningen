@@ -7,6 +7,7 @@ using System.Windows.Threading;
 using Klantbeheer.Domain;
 using System.Collections.Generic;
 using KlantBeheer.WPF.Languages;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace KlantBeheer.WPF
 {
@@ -65,6 +66,7 @@ namespace KlantBeheer.WPF
         {
             Application.Current.Shutdown();
         }
+
         /// <summary>
         /// openen van klantenscherm
         /// </summary>
@@ -75,6 +77,7 @@ namespace KlantBeheer.WPF
             if(_customerWindow != null)
                 _customerWindow.Show();
         }
+
         /// <summary>
         /// openen van productenscherm
         /// </summary>
@@ -85,6 +88,7 @@ namespace KlantBeheer.WPF
             //if (_productenWindow != null)
             //    _productenWindow.Show();
         }
+
         /// <summary>
         /// openen van bestellingen scherm. Bij openen wordt er steeds de recenste lijst van bestellingen opgehaald.
         /// </summary>
@@ -96,6 +100,7 @@ namespace KlantBeheer.WPF
             //    _bestellingenWindow.Refresh();
             //    _bestellingenWindow.Show();
         }
+
         /// <summary>
         /// We sluiten de volledige applicatie af
         /// </summary>
@@ -105,6 +110,7 @@ namespace KlantBeheer.WPF
         {
             Application.Current.Shutdown();
         }
+
         /// <summary>
         /// Methode voor zoekvak van de klantnaam. Deze methode zoekt alle klanten met overeenkomende tekst en geeft deze weer.
         /// </summary>
@@ -119,7 +125,8 @@ namespace KlantBeheer.WPF
                 return;
             }
             // Tip: maak dit case insensitive voor "meer punten" ;-) Nog beter: reguliere expressies gebruiken
-            var dataObjects = Context.CustomerManager.GetAll();
+            var dataObjects = Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().GetAll(); //var dataObjects = Context.CustomerManager.GetAll();
+
             List<Customer> allCustomers = new();
             foreach(var o in dataObjects)
             {
@@ -148,7 +155,7 @@ namespace KlantBeheer.WPF
 
         /// <summary>
         /// Tip: interessant voor eindopdracht!
-        /// Deze methode haalt de bestaande bestellingen van de klant op, telkens het aangeroepen wordt.
+        /// Deze methode haalt de bestaande bestellingen van de klant op, telkens deze aangeroepen wordt.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

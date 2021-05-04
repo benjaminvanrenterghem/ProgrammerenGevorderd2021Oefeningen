@@ -6,6 +6,7 @@ using Klantbeheer.Domain.Exceptions.ModelExceptions;
 
 namespace Repository.ADO
 {
+
     public class CustomerManager: ICustomerManager
     {
         public int Add(Klantbeheer.Domain.DataObject o)

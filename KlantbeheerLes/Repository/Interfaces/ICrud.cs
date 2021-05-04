@@ -26,6 +26,10 @@ namespace Repository.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Klantbeheer.Domain.DataObject Get(int id);
+        /// <summary>
+        /// Read single
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<Klantbeheer.Domain.DataObject> GetAll();
     }
 }

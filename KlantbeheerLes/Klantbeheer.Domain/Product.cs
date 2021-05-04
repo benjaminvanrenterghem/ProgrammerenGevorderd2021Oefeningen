@@ -1,4 +1,4 @@
-﻿namespace Klantbeheer.Domain
+﻿ namespace Klantbeheer.Domain
 {
     public class Product: DataObject { }
 }

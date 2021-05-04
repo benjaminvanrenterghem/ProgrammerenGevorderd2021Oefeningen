@@ -3,9 +3,9 @@ using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 using Klantbeheer.Domain;
-using KlantBeheer.WPF;
 using Klantbeheer.Domain.Exceptions.ModelExceptions;
 using KlantBeheer.WPF.Languages;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace KlantBeheer.WPF
 {
@@ -23,7 +23,7 @@ namespace KlantBeheer.WPF
         public Klanten()
         {
             InitializeComponent();
-            var objects = Context.CustomerManager.GetAll();
+            var objects = Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().GetAll(); //Context.CustomerManager.GetAll();
             _customers = new ObservableCollection<Customer>(); 
             foreach(var o in objects)
             {
@@ -46,17 +46,17 @@ namespace KlantBeheer.WPF
             {
                 foreach (Customer customer in e.OldItems)
                 {
-                    Context.CustomerManager.Remove(customer);
+                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Remove(customer); //Context.CustomerManager.GetAll();
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (Customer customer in e.NewItems)
                 {
-                    customer.SetCustomerID(Context.CustomerManager.Add(customer));// klant wordt toegevoegd en id wordt teruggeworpen
+                    // klant wordt toegevoegd en id wordt teruggeworpen
+                    Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Add(customer); //customer.SetCustomerID(Context.CustomerManager.Add(customer));
                 }
-            }
-            
+            }            
         }
 
         /// <summary>

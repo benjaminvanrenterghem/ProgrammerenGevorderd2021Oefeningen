@@ -1,4 +1,6 @@
 ﻿using KlantBeheer.WPF.Languages;
+using Microsoft.Extensions.DependencyInjection;
+using Repository.ADO;
 using System.Windows;
 
 namespace KlantBeheer.WPF
@@ -10,6 +12,7 @@ namespace KlantBeheer.WPF
     {
         private App()
         {
+            Context.ServiceCollection.AddTransient<ICustomerManager, CustomerManager>();
             Translations.Culture = new System.Globalization.CultureInfo("nl-BE"); // en-US nl-BE
         }
 
