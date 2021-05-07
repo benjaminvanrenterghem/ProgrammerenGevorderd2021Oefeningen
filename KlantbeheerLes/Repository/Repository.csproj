@@ -6,10 +6,26 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Klantbeheer.Domain\Klantbeheer.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="RepositoryConfig.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RepositoryConfig.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="RepositoryConfig.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>RepositoryConfig.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

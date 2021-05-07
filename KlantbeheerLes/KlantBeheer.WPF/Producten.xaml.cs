@@ -2,6 +2,7 @@
 using Klantbeheer.Domain.Exceptions.ModelExceptions;
 using KlantBeheer.WPF;
 using KlantBeheer.WPF.Languages;
+using KlantBestellingen.WPF.ViewModels;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Windows.Controls;
 
 namespace KlantBestellingen.WPF
 {
+
     /// <summary>
     /// Interaction logic for Producten.xaml
     /// </summary>
@@ -22,7 +24,9 @@ namespace KlantBestellingen.WPF
         #region Ctor
         public Producten()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            this.DataContext = new ProductenViewModel();
+
             var objects = Context.ProductManager.GetAll();
 
             _products = new ObservableCollection<Product>();

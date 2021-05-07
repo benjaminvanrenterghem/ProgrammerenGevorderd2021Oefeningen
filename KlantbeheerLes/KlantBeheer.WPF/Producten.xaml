@@ -31,7 +31,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="BtnNieuwProduct" Grid.Row="1" Grid.Column="0" Margin="5" Content="{StaticResource AddButton}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Click="BtnNieuwProduct_Click" IsEnabled="False"/>
+        <Button x:Name="BtnNieuwProduct" Grid.Row="1" Grid.Column="0" Margin="5" Content="{StaticResource AddButton}" Command="{Binding Path=BtnNieuwProductCommand}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" IsEnabled="False"/>
+        <!-- Click="BtnNieuwProduct_Click" -->
         <Grid Grid.Row="1" Grid.Column="1" Margin="5">
             <!-- een Grid schaalt automatisch mee! -->
             <Grid.RowDefinitions>

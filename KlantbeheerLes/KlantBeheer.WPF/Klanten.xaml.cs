@@ -47,18 +47,19 @@ namespace KlantBeheer.WPF
         /// <param name="e"></param>
         private void _klanten_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            if (e.Action == NotifyCollectionChangedAction.Remove)
+            if (e.Action == NotifyCollectionChangedAction.Remove) // er verdwijnt een element uit de ObservableCollection
             {
                 foreach (CustomerViewModel customer in e.OldItems)
                 {
+                    // We updaten de databank door de klant te verwijderen
                     Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Remove(customer.Value); //Context.CustomerManager.GetAll();
                 }
             }
-            else if (e.Action == NotifyCollectionChangedAction.Add)
+            else if (e.Action == NotifyCollectionChangedAction.Add) // er is een nieuw element toegevoegd aan de ObservableCollection
             {
                 foreach (CustomerViewModel customer in e.NewItems)
                 {
-                    // klant wordt toegevoegd en id wordt teruggeworpen
+                    // klant wordt toegevoegd aan de databank en id wordt teruggeworpen
                     customer.Id = Context.ServiceProvider.GetRequiredService<Repository.ADO.ICustomerManager>().Add(customer.Value); //customer.SetCustomerID(Context.CustomerManager.Add(customer));
                 }
             }            
@@ -105,7 +106,6 @@ namespace KlantBeheer.WPF
             // Omdat we een ObservableCollection<Klant> gebruiken, wordt onze wijziging meteen doorgegeven naar de gui (.Items wijzigen zou threading problemen geven):
             // Omdat we ObservableCollection<Klant> gebruiken en er een event gekoppeld is aan delete/add hiervan, wordt ook de business layer aangepast!
             _customers.Add(new CustomerViewModel(customer));
-            // LVET TODO: databank op orde stellen!
 
             TbKlantNaam.Text = null;
             TbKlantAdres.Text = null;
@@ -139,7 +139,6 @@ namespace KlantBeheer.WPF
                 e.Handled = true;
             }
             else _customers.Remove(dgKlanten.SelectedItem as CustomerViewModel);
-            // LVET TODO: databank op orde stellen!
         }
         #endregion
     }

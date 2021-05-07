@@ -17,7 +17,7 @@ namespace Repository
         public static SqlConnection CreateConnection()
         {
             // LVET TODO: later zullen we connection string nog verplaatsen naar een configuratiebestand
-            return new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=StoreDb;Integrated Security=True");
+            return new SqlConnection(RepositoryConfig.Default.ConnectionString /*@"Data Source=.\SQLEXPRESS;Initial Catalog=StoreDb;Integrated Security=True"*/);
         }
     }
 }

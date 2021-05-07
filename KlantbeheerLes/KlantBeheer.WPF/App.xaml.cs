@@ -1,6 +1,8 @@
 ﻿using KlantBeheer.WPF.Languages;
 using Microsoft.Extensions.DependencyInjection;
 using Repository.ADO;
+using Serilog;
+using Serilog.Formatting.Compact;
 using System.Windows;
 
 namespace KlantBeheer.WPF
@@ -15,6 +17,17 @@ namespace KlantBeheer.WPF
             // We registreren dat, indien we een service nodig hebben die de interface ICustomerManger implementeert, we een object van class CustomerManager teruggeven:
             Context.ServiceCollection.AddTransient<ICustomerManager, CustomerManager>();
             Translations.Culture = new System.Globalization.CultureInfo("fr-FR"); // en-US nl-BE
+
+            // https://github.com/Analogy-LogViewer/Analogy.LogViewer
+            Log.Logger = new LoggerConfiguration().
+                MinimumLevel.Debug().
+                Enrich.WithProperty("Application", "Klantenbeheer").
+                Enrich.WithThreadId().
+                Enrich.WithMemoryUsage().                
+                //WriteTo.File(@"logs\Log_SerilogDemoWPF.txt", rollingInterval: RollingInterval.Day).
+                WriteTo.File(new CompactJsonFormatter(), @"logs\log.json", rollingInterval: RollingInterval.Hour).
+                WriteTo.Debug().
+                CreateLogger();
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

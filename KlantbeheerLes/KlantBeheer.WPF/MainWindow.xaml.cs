@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using KlantBeheer.WPF.Languages;
 using Microsoft.Extensions.DependencyInjection;
 using KlantBestellingen.WPF;
+using Serilog;
 
 namespace KlantBeheer.WPF
 {
@@ -107,6 +108,7 @@ namespace KlantBeheer.WPF
         /// <param name="e"></param>
         private void MenuItemSluiten_Click(object sender, RoutedEventArgs e)
         {
+            Log.CloseAndFlush();
             // Met volgend statement sluiten we de WPF applicatie volledig af:
             Application.Current.Shutdown();
         }
