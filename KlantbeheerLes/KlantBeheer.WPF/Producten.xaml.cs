@@ -3,11 +3,14 @@ using Klantbeheer.Domain.Exceptions.ModelExceptions;
 using KlantBeheer.WPF;
 using KlantBeheer.WPF.Languages;
 using KlantBestellingen.WPF.ViewModels;
+using Serilog;
+using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace KlantBestellingen.WPF
 {
@@ -36,6 +39,21 @@ namespace KlantBestellingen.WPF
             }
             _products.CollectionChanged += _producten_CollectionChanged;
             dgProducten.ItemsSource = _products;
+
+            var timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Log.Debug("-> Timer_Tick");
+            lblTime.Content = DateTime.Now.ToLongTimeString();
+            Log.Information(lblTime.Content.ToString());
+            Log.Debug("<- Timer_Tick");
         }
         #endregion
 

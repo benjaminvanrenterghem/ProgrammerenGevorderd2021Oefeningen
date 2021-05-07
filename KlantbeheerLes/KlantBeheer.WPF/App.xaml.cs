@@ -16,9 +16,10 @@ namespace KlantBeheer.WPF
         {
             // We registreren dat, indien we een service nodig hebben die de interface ICustomerManger implementeert, we een object van class CustomerManager teruggeven:
             Context.ServiceCollection.AddTransient<ICustomerManager, CustomerManager>();
-            Translations.Culture = new System.Globalization.CultureInfo("fr-FR"); // en-US nl-BE
+            Translations.Culture = new System.Globalization.CultureInfo("nl-BE"); // en-US nl-BE
 
-            // https://github.com/Analogy-LogViewer/Analogy.LogViewer
+            // Tip, maar werk om het actief te krijgen: https://github.com/Analogy-LogViewer/Analogy.LogViewer
+
             Log.Logger = new LoggerConfiguration().
                 MinimumLevel.Debug().
                 Enrich.WithProperty("Application", "Klantenbeheer").
