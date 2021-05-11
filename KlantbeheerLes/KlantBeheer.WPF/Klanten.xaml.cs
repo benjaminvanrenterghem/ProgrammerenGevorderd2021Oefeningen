@@ -33,7 +33,6 @@ namespace KlantBeheer.WPF
             }
             dgKlanten.ItemsSource = _customers; // bron van de gegevens!
             _customers.CollectionChanged += _klanten_CollectionChanged;
-
             // Om aan vertalingen te raken in de code behind:
             // var s = Translations.CustomerNameTag;
         }

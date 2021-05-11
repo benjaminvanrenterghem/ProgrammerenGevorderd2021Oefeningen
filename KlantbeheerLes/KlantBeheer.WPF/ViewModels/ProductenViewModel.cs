@@ -1,4 +1,5 @@
-﻿using KlantBestellingen.WPF.Commands;
+﻿using KlantBeheer.WPF.MMVM;
+using KlantBestellingen.WPF.Commands;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -10,9 +11,12 @@ namespace KlantBestellingen.WPF.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+
         public ProductenViewModel()
         {
             BtnNieuwProductCommand = new NieuwProductCommand(this);
+            // Nog een stapje verder:
+            // BtnNieuwProductCommand = new DelegateCommand(...);
         }
     }
 }

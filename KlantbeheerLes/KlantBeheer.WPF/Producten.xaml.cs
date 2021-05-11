@@ -10,6 +10,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace KlantBestellingen.WPF
@@ -53,6 +54,12 @@ namespace KlantBestellingen.WPF
             Log.Debug("-> Timer_Tick");
             lblTime.Content = DateTime.Now.ToLongTimeString();
             Log.Information(lblTime.Content.ToString());
+            if (BtnNieuwProduct.IsEnabled)
+                BtnNieuwProduct.IsEnabled = false;
+            else
+                BtnNieuwProduct.IsEnabled = true;
+            // Update trigger voor CanExecute() van command pattern:
+            CommandManager.InvalidateRequerySuggested();
             Log.Debug("<- Timer_Tick");
         }
         #endregion
