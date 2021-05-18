@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel;
 
-namespace KlantBeheer.WPF.UserModels
+namespace KlantBeheer.WPF.ViewModels
 {
     public class UserViewModel : INotifyPropertyChanged
     {

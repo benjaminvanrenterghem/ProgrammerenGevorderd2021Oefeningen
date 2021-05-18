@@ -238,6 +238,9 @@
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="Students" xml:space="preserve">
+    <value>Eleves</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>Time</value>
   </data>

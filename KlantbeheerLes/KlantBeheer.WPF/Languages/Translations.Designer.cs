@@ -421,6 +421,15 @@ namespace KlantBeheer.WPF.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Students.
+        /// </summary>
+        public static string Students {
+            get {
+                return ResourceManager.GetString("Students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time.
         /// </summary>
         public static string Time {

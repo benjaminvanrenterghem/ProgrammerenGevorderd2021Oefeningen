@@ -1,5 +1,4 @@
-﻿using KlantBeheer.WPF.MMVM;
-using KlantBestellingen.WPF.ViewModels;
+﻿using KlantBestellingen.WPF.ViewModels;
 using Serilog;
 using System;
 using System.Windows.Input;

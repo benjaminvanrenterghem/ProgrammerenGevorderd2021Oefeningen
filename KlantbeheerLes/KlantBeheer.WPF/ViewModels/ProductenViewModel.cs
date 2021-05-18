@@ -1,5 +1,4 @@
-﻿using KlantBeheer.WPF.MMVM;
-using KlantBestellingen.WPF.Commands;
+﻿using KlantBestellingen.WPF.Commands;
 using System.ComponentModel;
 using System.Windows.Input;
 

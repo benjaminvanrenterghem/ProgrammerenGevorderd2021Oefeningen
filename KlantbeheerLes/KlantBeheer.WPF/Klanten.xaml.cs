@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using Klantbeheer.Domain;
 using Klantbeheer.Domain.Exceptions.ModelExceptions;
 using KlantBeheer.WPF.Languages;
-using KlantBeheer.WPF.UserModels;
+using KlantBeheer.WPF.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace KlantBeheer.WPF

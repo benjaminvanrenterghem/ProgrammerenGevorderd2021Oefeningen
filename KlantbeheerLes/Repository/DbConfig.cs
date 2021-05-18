@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Configuration;
 
 namespace Repository
 {
@@ -16,7 +17,11 @@ namespace Repository
         // Indien ik toch een aparte extra connectie wil, gebruik ik de volgende public method:
         public static SqlConnection CreateConnection()
         {
-            return new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=StoreDb;Integrated Security=True");
+            var s = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
+            // Wanneer we niets vinden in de app.config file, dan kiezen we voor een default waarde:
+            if (string.IsNullOrEmpty(s))
+                s = @"Data Source=.\SQLEXPRESS;Initial Catalog=StoreDb;Integrated Security=True";
+            return new SqlConnection(s);
         }
     }
 }

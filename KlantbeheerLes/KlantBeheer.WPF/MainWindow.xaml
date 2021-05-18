@@ -43,6 +43,11 @@
                             <Image Source="/KlantBeheer.WPF;component/Images/basket.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="{x:Static langs:Translations.Students}" Click="MenuItem_Studenten_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/KlantBeheer.WPF;component/Images/basket.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>

@@ -10,6 +10,8 @@ using KlantBeheer.WPF.Languages;
 using Microsoft.Extensions.DependencyInjection;
 using KlantBestellingen.WPF;
 using Serilog;
+using KlantBeheer.WPF.ViewModels;
+using KlantBeheer.WPF.Views;
 
 namespace KlantBeheer.WPF
 {
@@ -23,6 +25,7 @@ namespace KlantBeheer.WPF
         private Producten _productenWindow = new();
         //private Bestellingen _bestellingenWindow = new();
         //private DetailsBestelling _bestellingDetailWindow = new();
+        private Students _studentenWindow = new();
         #endregion
 
         #region Ctor
@@ -32,6 +35,7 @@ namespace KlantBeheer.WPF
             Closing += MainWindow_Closing;
             _customerWindow.Closing += _Window_Closing;
             _productenWindow.Closing += _Window_Closing;
+            _studentenWindow.Closing += _Window_Closing;
             //_bestellingenWindow.Closing += _Window_Closing;
             //_bestellingDetailWindow.Closing += _Window_Closing;
             //_bestellingDetailWindow.UpdateEvent += Refresh;
@@ -99,6 +103,16 @@ namespace KlantBeheer.WPF
             //if (_bestellingenWindow != null)
             //    _bestellingenWindow.Refresh();
             //    _bestellingenWindow.Show();
+        }
+
+        /// <summary>
+        /// openen van studentenoverzichtsscherm.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Studenten_Click(object sender, RoutedEventArgs e)
+        {
+            _studentenWindow?.Show();
         }
 
         /// <summary>

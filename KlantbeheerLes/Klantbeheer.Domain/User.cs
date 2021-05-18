@@ -2,6 +2,7 @@
 
 namespace Klantbeheer.Domain
 {
+
     public class User
     {
         public int Id { get; set; }

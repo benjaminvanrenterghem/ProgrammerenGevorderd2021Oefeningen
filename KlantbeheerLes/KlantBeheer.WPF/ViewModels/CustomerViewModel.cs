@@ -1,7 +1,7 @@
 ﻿using Klantbeheer.Domain;
 using System.ComponentModel;
 
-namespace KlantBeheer.WPF.UserModels
+namespace KlantBeheer.WPF.ViewModels
 {
     public class CustomerViewModel : INotifyPropertyChanged
     {

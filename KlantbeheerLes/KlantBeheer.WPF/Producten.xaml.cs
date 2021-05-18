@@ -46,7 +46,7 @@ namespace KlantBestellingen.WPF
                 Interval = TimeSpan.FromSeconds(1)
             };
             timer.Tick += Timer_Tick;
-            timer.Start();
+            //timer.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)

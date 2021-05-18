@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{E64CD730-93FD-467D-9E48-F870E7D1600F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{E64CD730-93FD-467D-9E48-F870E7D1600F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klantbeheer.Domain", "Klantbeheer.Domain\Klantbeheer.Domain.csproj", "{8508CE95-E328-4DC1-8610-4DB20A7B0E4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klantbeheer.Domain", "Klantbeheer.Domain\Klantbeheer.Domain.csproj", "{8508CE95-E328-4DC1-8610-4DB20A7B0E4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KlantBeheer.App", "KlantBeheer.App\KlantBeheer.App.csproj", "{7748898B-0E7E-4239-9652-D37318324EF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KlantBeheer.App", "KlantBeheer.App\KlantBeheer.App.csproj", "{7748898B-0E7E-4239-9652-D37318324EF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KlantBeheer.WPF", "KlantBeheer.WPF\KlantBeheer.WPF.csproj", "{FC5BBBB9-EC64-4043-BDE4-D8636070D169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KlantBeheer.WPF", "KlantBeheer.WPF\KlantBeheer.WPF.csproj", "{FC5BBBB9-EC64-4043-BDE4-D8636070D169}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klantbeheer.DomainTests", "Klantbeheer.DomainTests\Klantbeheer.DomainTests.csproj", "{E1B5674A-493D-4843-A016-820494D7C74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM", "MVVM\MVVM.csproj", "{88F18F5E-ED43-4CBA-BDC9-BF51EFD035DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMTests", "MVVMTests\MVVMTests.csproj", "{AFD7C3B0-5C7B-48C8-B517-5F41C9C9A702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{FC5BBBB9-EC64-4043-BDE4-D8636070D169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC5BBBB9-EC64-4043-BDE4-D8636070D169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC5BBBB9-EC64-4043-BDE4-D8636070D169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B5674A-493D-4843-A016-820494D7C74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B5674A-493D-4843-A016-820494D7C74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B5674A-493D-4843-A016-820494D7C74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B5674A-493D-4843-A016-820494D7C74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F18F5E-ED43-4CBA-BDC9-BF51EFD035DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F18F5E-ED43-4CBA-BDC9-BF51EFD035DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F18F5E-ED43-4CBA-BDC9-BF51EFD035DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F18F5E-ED43-4CBA-BDC9-BF51EFD035DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD7C3B0-5C7B-48C8-B517-5F41C9C9A702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD7C3B0-5C7B-48C8-B517-5F41C9C9A702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD7C3B0-5C7B-48C8-B517-5F41C9C9A702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD7C3B0-5C7B-48C8-B517-5F41C9C9A702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
